@@ -1,0 +1,353 @@
+/* Reset e configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1a1a1a;
+    min-height: 100vh;
+    padding: 20px;
+    color: #e0e0e0;
+}
+
+/* Container principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #2d2d2d;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+
+/* Header */
+.header {
+    background: #3a3a3a;
+    color: #ffffff;
+    padding: 30px;
+    text-align: center;
+    border-bottom: 1px solid #4a4a4a;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.1em;
+    opacity: 0.8;
+}
+
+/* Área de ações */
+.actions {
+    padding: 20px 30px;
+    background: #333333;
+    border-bottom: 1px solid #4a4a4a;
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #4a90e2;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background: #357abd;
+    transform: translateY(-2px);
+}
+
+.btn-success {
+    background: #28a745;
+}
+
+.btn-success:hover {
+    background: #218838;
+}
+
+.btn-warning {
+    background: #ffc107;
+    color: #212529;
+}
+
+.btn-warning:hover {
+    background: #e0a800;
+}
+
+.btn-danger {
+    background: #dc3545;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+}
+
+.btn-secondary {
+    background: #6c757d;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+/* Container de tarefas */
+.tarefas-container {
+    padding: 30px;
+}
+
+/* Cards de tarefas */
+.tarefa-card {
+    background: #3a3a3a;
+    border: 1px solid #4a4a4a;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.tarefa-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    border-color: #5a5a5a;
+}
+
+.tarefa-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.tarefa-titulo {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.tarefa-id {
+    color: #b0b0b0;
+    font-size: 0.9em;
+}
+
+.tarefa-descricao {
+    color: #cccccc;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.tarefa-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tarefa-info {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9em;
+    color: #b0b0b0;
+}
+
+.tarefa-acoes {
+    display: flex;
+    gap: 10px;
+}
+
+/* Badges de status */
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-pendente {
+    background: #2c2c00;
+    color: #ffd700;
+    border: 1px solid #ffd700;
+}
+
+.status-em_andamento {
+    background: #002c2c;
+    color: #00d4d4;
+    border: 1px solid #00d4d4;
+}
+
+.status-concluida {
+    background: #002c00;
+    color: #00d400;
+    border: 1px solid #00d400;
+}
+
+/* Badges de prioridade */
+.prioridade-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
+.prioridade-alta {
+    background: #2c0000;
+    color: #ff4444;
+    border: 1px solid #ff4444;
+}
+
+.prioridade-media {
+    background: #2c2c00;
+    color: #ffd700;
+    border: 1px solid #ffd700;
+}
+
+.prioridade-baixa {
+    background: #002c2c;
+    color: #00d4d4;
+    border: 1px solid #00d4d4;
+}
+
+/* Estado sem tarefas */
+.sem-tarefas {
+    text-align: center;
+    padding: 60px 20px;
+    color: #b0b0b0;
+}
+
+.sem-tarefas h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.sem-tarefas p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+/* Formulários */
+.form-container {
+    padding: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #4a4a4a;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+    background: #3a3a3a;
+    color: #e0e0e0;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #888888;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.form-actions .btn {
+    flex: 1;
+    text-align: center;
+}
+
+/* Elementos especiais */
+.required {
+    color: #ff4444;
+}
+
+.help-text {
+    font-size: 0.85em;
+    color: #b0b0b0;
+    margin-top: 5px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        border-radius: 10px;
+    }
+    
+    .header h1 {
+        font-size: 2em;
+    }
+    
+    .tarefa-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .tarefa-acoes {
+        justify-content: flex-start;
+    }
+    
+    .tarefa-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+}

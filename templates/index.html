@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Tarefas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Gestão de Tarefas</h1>
+            <p>Organize suas atividades de forma simples e eficiente</p>
+        </div>
+        
+        <div class="actions">
+            <a href="{{ url_for('adicionar_tarefa') }}" class="btn btn-success">
+                 Adicionar Nova Tarefa
+            </a>
+        </div>
+        
+        <div class="tarefas-container">
+            {% if tarefas %}
+                {% for tarefa in tarefas.values() %}
+                    <div class="tarefa-card">
+                        <div class="tarefa-header">
+                            <div>
+                                <div class="tarefa-titulo">{{ tarefa.titulo }}</div>
+                                <div class="tarefa-id">#{{ tarefa.id }}</div>
+                            </div>
+                            <div class="tarefa-acoes">
+                                <a href="{{ url_for('alterar_status', tarefa_id=tarefa.id) }}" 
+                                   class="btn btn-warning btn-sm">
+                                    {% if tarefa.status == 'pendente' %}
+                                        ▶️ Iniciar
+                                    {% elif tarefa.status == 'em_andamento' %}
+                                        ✅ Concluir
+                                    {% else %}
+                                        🔄 Reabrir
+                                    {% endif %}
+                                </a>
+                                <a href="{{ url_for('excluir_tarefa', tarefa_id=tarefa.id) }}" 
+                                   class="btn btn-danger btn-sm"
+                                   onclick="return confirm('Tem certeza que deseja excluir esta tarefa?')">
+                                    Excluir
+                                </a>
+                            </div>
+                        </div>
+                        
+                        {% if tarefa.descricao %}
+                            <div class="tarefa-descricao">{{ tarefa.descricao }}</div>
+                        {% endif %}
+                        
+                        <div class="tarefa-meta">
+                            <div class="tarefa-info">
+                                <div class="info-item">
+                                    <span class="status-badge status-{{ tarefa.status }}">
+                                        {{ tarefa.status.replace('_', ' ') }}
+                                    </span>
+                                </div>
+                                
+                                {% if tarefa.prioridade %}
+                                    <div class="info-item">
+                                        <span class="prioridade-badge prioridade-{{ tarefa.prioridade }}">
+                                            {{ tarefa.prioridade }}
+                                        </span>
+                                    </div>
+                                {% endif %}
+                                
+                                <div class="info-item">
+                                    📅 Criada: {{ tarefa.data_criacao }}
+                                </div>
+                                
+                                {% if tarefa.data_conclusao %}
+                                    <div class="info-item">
+                                        ✅ Concluída: {{ tarefa.data_conclusao }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="sem-tarefas">
+                    <h3>Nenhuma tarefa encontrada</h3>
+                    <p>Comece criando sua primeira tarefa!</p>
+                    <a href="{{ url_for('adicionar_tarefa') }}" class="btn btn-success">
+                         Criar Primeira Tarefa
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
